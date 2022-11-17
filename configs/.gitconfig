@@ -1,0 +1,19 @@
+[user]
+    name = User
+    email = hello@user.com
+[push]
+    default = current
+# [pull]
+#     ff = only
+[core]
+	editor = code --wait
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --new-window --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --new-window --wait $MERGED
+[credential]
+	helper = store

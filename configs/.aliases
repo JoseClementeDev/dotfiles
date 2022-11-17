@@ -1,0 +1,94 @@
+# =================================
+# Alias for folders
+# =================================
+alias dev='cd /mnt/d/dev/examples/'
+alias examples='cd /mnt/d/dev/examples/'
+alias projects='cd /mnt/d/dev/projects/'
+alias architecture='cd /mnt/d/dev/projects/architecture/'
+alias bope='cd /mnt/d/dev/projects/bope/'
+alias cips='cd /mnt/d/dev/projects/cips/'
+alias core='cd /mnt/d/dev/projects/core/'
+alias np='cd /mnt/d/dev/projects/np/'
+alias payments='cd /mnt/d/dev/projects/payments/'
+alias qa='cd /mnt/d/dev/projects/np/'
+
+# =================================
+# Git Related Aliases
+# =================================
+### Basic info
+alias gs='git status'
+alias gb='git branch'
+alias gr='git remote -v'
+
+### Getting info from 'Git log'
+alias gl='git log --oneline'
+
+### Pushing to basic branches
+alias gpom='git push origin master'
+alias gpod='git push origin develop'
+
+
+# =================================
+# Alias for bat
+# =================================
+alias cat=batcat --paging=never
+
+
+# =================================
+# Alias for exa
+# =================================
+alias ls='exa -l --group-directories-first --color=auto --icons --no-permissions --no-user'
+alias ll='exa -lahF --group-directories-first --color=auto --icons'
+
+
+# =================================
+# Alias for container manager
+# =================================
+alias docker=podman
+alias docker-compose=podman-compose
+
+
+# =================================
+# Alias for docker compose v2
+# =================================
+# alias docker-compose='docker compose'
+
+# Start the docker-compose stack in the current directory
+alias dcu="docker-compose up -d"
+
+# Start the docker-compose stack in the current directory and rebuild the images
+alias dcub="docker-compose up -d --build"
+
+# Stop, delete (down) or restart the docker-compose stack in the current directory
+alias dcs="docker-compose stop"
+alias dcd="docker-compose down"
+alias dcr="docker-compose restart"
+
+# Show the logs for the docker-compose stack in the current directory
+# May be extended with the service name to get service-specific logs, like
+# 'dcl php' to get the logs of the php container
+alias dcl="docker-compose logs"
+
+# Quickly run the docker exec command like this: 'dex container-name bash'
+alias dex="docker exec -it"
+
+
+# =================================
+# General alias
+# =================================
+# Open current folder in Explorer (Windows WSL)
+alias open="explorer.exe $1"
+
+
+# export EDITOR="code"
+# export GIT_EDITOR="code"
+# export VISUAL="code"
+
+export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob="!.git/*" --glob="!node_modules/*" --glob="!vendor/*" 2> /dev/null'
+export FZF_DEFAULT_OPTS='--preview "batcat --style=numbers --color=always --line-range :500 {}"'
+
+unalias z 2> /dev/null
+z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf-tmux +s --tac --query "$*" | sed 's/^[0-9,.]* *//')"
+}
