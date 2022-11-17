@@ -22,10 +22,13 @@ alias gr='git remote -v'
 
 ### Getting info from 'Git log'
 alias gl='git log --oneline'
+alias glog="git log --graph --abbrev-commit --decorate --date=short --format=format:'%C(bold blue)%h%C(reset) - %C(green)%ad %C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
-### Pushing to basic branches
-alias gpom='git push origin master'
-alias gpod='git push origin develop'
+### Pushing/Pulling to current branches
+alias _git_current_branch="git rev-parse --abbrev-ref HEAD"
+alias gpull='git pull origin $(_git_current_branch)'
+alias gpush='git push origin $(_git_current_branch)'
+
 
 
 # =================================
@@ -47,6 +50,21 @@ alias ll='exa -lahF --group-directories-first --color=auto --icons'
 alias docker=podman
 alias docker-compose=podman-compose
 
+# =================================
+# Docker aliases
+# =================================
+alias net7='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:7.0-alpine '
+alias net6='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:6.0-alpine '
+alias net5='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:5.0-alpine '
+alias net3.1='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:3.1-alpine '
+alias net2.1='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:2.1-alpine '
+alias node16='docker run --rm -it -v "$PWD":/app -w /app node:16-alpine '
+alias node14='docker run --rm -it -v "$PWD":/app -w /app node:14-alpine '
+alias node12='docker run --rm -it -v "$PWD":/app -w /app node:12-alpine '
+alias node10='docker run --rm -it -v "$PWD":/app -w /app node:10-alpine '
+alias npm='docker run --rm -it -v "$PWD":/app -w /app node:16-alpine npm '
+alias aws='docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli '
+alias tree='f(){ docker run --rm -it -v "$PWD":/app johnfmorton/tree-cli tree "$@";  unset -f f; }; f'
 
 # =================================
 # Alias for docker compose v2
