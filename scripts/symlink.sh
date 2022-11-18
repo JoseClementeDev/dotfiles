@@ -33,13 +33,3 @@ linkDotfile .aliases
 linkDotfile .bashrc
 linkDotfile .zshrc
 linkDotfile .gitconfig
-
-
-# Podman configurations
-mkdir -p ./.config/containers/
-ln -s ${HOME}/dotfiles/configs/containers/registries.conf ./.config/containers/registries.conf
-ln -s ${HOME}/dotfiles/configs/containers/storage.conf ./.config/containers/storage.conf
-
-# Podman configurations to use Makefile with alias 'docker-compose'
-sudo ln -s /usr/bin/podman /usr/bin/docker
-sudo ln -s /usr/local/bin/podman-compose /usr/local/bin/docker-compose
