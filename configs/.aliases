@@ -1,7 +1,7 @@
 # =================================
 # Alias for folders
 # =================================
-alias dev='cd /mnt/d/dev/examples/'
+alias dev='cd /mnt/d/dev/'
 alias examples='cd /mnt/d/dev/examples/'
 alias projects='cd /mnt/d/dev/projects/'
 alias architecture='cd /mnt/d/dev/projects/architecture/'
