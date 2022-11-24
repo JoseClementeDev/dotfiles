@@ -63,7 +63,7 @@ alias node14='docker run --rm -it -v "$PWD":/app -w /app node:14-alpine '
 alias node12='docker run --rm -it -v "$PWD":/app -w /app node:12-alpine '
 alias node10='docker run --rm -it -v "$PWD":/app -w /app node:10-alpine '
 alias npm='docker run --rm -it -v "$PWD":/app -w /app node:16-alpine npm '
-alias aws='docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli '
+alias awscli='docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli '
 alias tree='f(){ docker run --rm -it -v "$PWD":/app johnfmorton/tree-cli tree "$@";  unset -f f; }; f'
 
 # =================================
