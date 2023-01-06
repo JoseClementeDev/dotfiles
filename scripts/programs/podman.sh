@@ -21,3 +21,7 @@ ln -s ${HOME}/dotfiles/configs/containers/storage.conf ${HOME}/.config/container
 # Podman configurations to use Makefile with alias 'docker-compose'
 sudo ln -s /usr/bin/podman /usr/bin/docker
 sudo ln -s /usr/local/bin/podman-compose /usr/local/bin/docker-compose
+
+# Set iptables-legacy for podman
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy

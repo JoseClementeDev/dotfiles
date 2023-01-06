@@ -15,3 +15,7 @@ sudo add-apt-repository \
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 sudo docker run hello-world
+
+# Set iptables-legacy for docker
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
