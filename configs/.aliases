@@ -29,6 +29,11 @@ alias _git_current_branch="git rev-parse --abbrev-ref HEAD"
 alias gpull='git pull origin $(_git_current_branch)'
 alias gpush='git push origin $(_git_current_branch)'
 
+# show a list of local git branches sorted by the commit date
+alias git.branches='git for-each-ref --sort=-committerdate refs/heads --format="%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
+
+# show a list of local and remote git branches sorted by the commit date
+alias git.branches.remote='git for-each-ref --sort=-committerdate refs/heads refs/remotes --format="%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)"'
 
 
 # =================================
