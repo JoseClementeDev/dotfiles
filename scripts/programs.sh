@@ -4,5 +4,5 @@ cd ./dotfiles/scripts/programs/
 
 ./python.sh
 ./docker.sh
-# ./podman.sh
+./podman.sh
 ./k6.sh
