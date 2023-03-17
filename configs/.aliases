@@ -4,13 +4,8 @@
 alias dev='cd /mnt/d/dev/'
 alias examples='cd /mnt/d/dev/examples/'
 alias projects='cd /mnt/d/dev/projects/'
-alias architecture='cd /mnt/d/dev/projects/architecture/'
-alias bope='cd /mnt/d/dev/projects/bope/'
-alias cips='cd /mnt/d/dev/projects/cips/'
-alias core='cd /mnt/d/dev/projects/core/'
-alias np='cd /mnt/d/dev/projects/np/'
-alias payments='cd /mnt/d/dev/projects/payments/'
-alias qa='cd /mnt/d/dev/projects/np/'
+alias projects='cd /mnt/d/dev/personal/'
+alias projects='cd /mnt/d/dev/work/'
 
 # =================================
 # Git Related Aliases
@@ -52,8 +47,8 @@ alias ll='exa -lahF --group-directories-first --color=auto --icons'
 # =================================
 # Alias for container manager
 # =================================
-alias docker=podman
-alias docker-compose=podman-compose
+# alias docker=podman
+# alias docker-compose=podman-compose
 
 # =================================
 # Docker aliases
@@ -112,6 +107,6 @@ export FZF_DEFAULT_OPTS='--preview "batcat --style=numbers --color=always --line
 
 unalias z 2> /dev/null
 z() {
-  [ $# -gt 0 ] && _z "$*" && return
-  cd "$(_z -l 2>&1 | fzf-tmux +s --tac --query "$*" | sed 's/^[0-9,.]* *//')"
+  [ $# -gt 0 ] && zshz "$*" && return
+  cd "$(zshz -l 2>&1 | fzf-tmux +s --tac --query "$*" | sed 's/^[0-9,.]* *//')"
 }

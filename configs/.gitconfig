@@ -3,8 +3,8 @@
     email = hello@user.com
 [push]
     default = current
-# [pull]
-#     ff = only
+[pull]
+    ff = only
 [core]
 	editor = code --wait
 [diff]
