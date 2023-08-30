@@ -21,7 +21,7 @@ install fzf
 install bat
 install exa
 install ripgrep
-install awscli
+# install awscli
 install openjdk-11-jdk
 install dotnet-sdk-6.0
 
