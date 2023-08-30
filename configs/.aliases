@@ -4,8 +4,8 @@
 alias dev='cd /mnt/d/dev/'
 alias examples='cd /mnt/d/dev/examples/'
 alias projects='cd /mnt/d/dev/projects/'
-alias projects='cd /mnt/d/dev/personal/'
-alias projects='cd /mnt/d/dev/work/'
+alias personal='cd /mnt/d/dev/personal/'
+alias work='cd /mnt/d/dev/work/'
 
 # =================================
 # Git Related Aliases
