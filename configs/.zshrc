@@ -7,7 +7,7 @@ antigen use oh-my-zsh
 # Set plugins from the default repo (oh-my-zsh)
 antigen bundle git
 antigen bundle command-not-found
-antigen bundle docker
+# antigen bundle docker
 antigen bundle z
 
 # Set plugins from external repos
