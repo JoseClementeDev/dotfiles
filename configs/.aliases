@@ -1,11 +1,21 @@
+#-------------------------------------------------------------
+# Aliases for Installation
+#-------------------------------------------------------------
+alias install="sudo apt install"           #apt-get wrapper for better performance.
+alias upgrade='sudo apt upgrade'           #sudo apt-get upgrade
+alias update='sudo apt update'             #sudo apt-get update
+alias remove="sudo apt remove"
+alias purge="sudo apt purge"
+alias autoremove="sudo apt autoremove"
+
 # =================================
 # Alias for folders
 # =================================
-alias dev='cd /mnt/d/dev/'
-alias examples='cd /mnt/d/dev/examples/'
-alias projects='cd /mnt/d/dev/projects/'
-alias personal='cd /mnt/d/dev/personal/'
-alias work='cd /mnt/d/dev/work/'
+alias dev='cd /${HOME}/Dev/'
+alias examples='cd /${HOME}/Dev/examples/'
+alias personal='cd /${HOME}/Dev/personal/'
+alias projects='cd /${HOME}/Dev/projects/'
+alias work='cd /${HOME}/Dev/work/'
 
 # =================================
 # Git Related Aliases
@@ -53,16 +63,19 @@ alias ll='exa -lahF --group-directories-first --color=auto --icons'
 # =================================
 # Docker aliases
 # =================================
+alias net8='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:7.0-alpine '
 alias net7='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:7.0-alpine '
 alias net6='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:6.0-alpine '
 alias net5='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:5.0-alpine '
 alias net3.1='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:3.1-alpine '
 alias net2.1='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:2.1-alpine '
+alias node20='docker run --rm -it -v "$PWD":/app -w /app node:20-alpine '
+alias node18='docker run --rm -it -v "$PWD":/app -w /app node:18-alpine '
 alias node16='docker run --rm -it -v "$PWD":/app -w /app node:16-alpine '
 alias node14='docker run --rm -it -v "$PWD":/app -w /app node:14-alpine '
 alias node12='docker run --rm -it -v "$PWD":/app -w /app node:12-alpine '
 alias node10='docker run --rm -it -v "$PWD":/app -w /app node:10-alpine '
-alias npm='docker run --rm -it -v "$PWD":/app -w /app node:16-alpine npm '
+# alias npm='docker run --rm -it -v "$PWD":/app -w /app node:18-alpine npm '
 alias awscli='docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli '
 alias tree='f(){ docker run --rm -it -v "$PWD":/app johnfmorton/tree-cli tree "$@";  unset -f f; }; f'
 
@@ -72,20 +85,20 @@ alias tree='f(){ docker run --rm -it -v "$PWD":/app johnfmorton/tree-cli tree "$
 # alias docker-compose='docker compose'
 
 # Start the docker-compose stack in the current directory
-alias dcu="docker-compose up -d"
+alias dcu="docker compose up -d"
 
 # Start the docker-compose stack in the current directory and rebuild the images
-alias dcub="docker-compose up -d --build"
+alias dcub="docker compose up -d --build"
 
 # Stop, delete (down) or restart the docker-compose stack in the current directory
-alias dcs="docker-compose stop"
-alias dcd="docker-compose down"
-alias dcr="docker-compose restart"
+alias dcs="docker compose stop"
+alias dcd="docker compose down"
+alias dcr="docker compose restart"
 
 # Show the logs for the docker-compose stack in the current directory
 # May be extended with the service name to get service-specific logs, like
 # 'dcl php' to get the logs of the php container
-alias dcl="docker-compose logs"
+alias dcl="docker compose logs"
 
 # Quickly run the docker exec command like this: 'dex container-name bash'
 alias dex="docker exec -it"
