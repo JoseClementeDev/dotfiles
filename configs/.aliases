@@ -63,7 +63,7 @@ alias ll='exa -lahF --group-directories-first --color=auto --icons'
 # =================================
 # Docker aliases
 # =================================
-alias net8='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:7.0-alpine '
+alias net8='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:8.0-alpine '
 alias net7='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:7.0-alpine '
 alias net6='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:6.0-alpine '
 alias net5='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:5.0-alpine '
