@@ -23,7 +23,7 @@ install exa
 install ripgrep
 # install awscli
 install openjdk-11-jdk
-install dotnet-sdk-6.0
+# install dotnet-sdk-6.0
 
 # Fun stuff
 install figlet
