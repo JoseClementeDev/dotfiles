@@ -6,5 +6,5 @@ cd ./dotfiles/scripts/programs/
 ./docker.sh
 ./node.sh
 # ./podman.sh
-# ./k6.sh
+./k6.sh
 ./awscliv2.sh
