@@ -11,6 +11,9 @@ sudo apt upgrade -y
 
 curl -L git.io/antigen > ~/antigen.zsh
 
+# Create Dev folders
+mkdir -p ${HOME}/Dev/examples ${HOME}/Dev/personal ${HOME}/Dev/projects
+
 # See our zsh changes
 chsh -s $(which zsh)
 
