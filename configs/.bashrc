@@ -116,8 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 # Test if ~/.aliases exists and source it
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
+
+# fnm
+export PATH="$HOME/.local/share/fnm:$PATH"
+eval "`fnm env`"
