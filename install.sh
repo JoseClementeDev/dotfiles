@@ -18,6 +18,6 @@ mkdir -p ${HOME}/Dev/examples ${HOME}/Dev/personal ${HOME}/Dev/projects
 figlet "... and we're back!" | lolcat
 
 # See our zsh changes
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 zsh
