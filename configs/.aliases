@@ -8,6 +8,7 @@ alias remove="sudo apt remove"
 alias purge="sudo apt purge"
 alias autoremove="sudo apt autoremove"
 
+
 # =================================
 # Alias for folders
 # =================================
@@ -15,7 +16,7 @@ alias dev='cd /${HOME}/Dev/'
 alias examples='cd /${HOME}/Dev/examples/'
 alias personal='cd /${HOME}/Dev/personal/'
 alias projects='cd /${HOME}/Dev/projects/'
-alias work='cd /${HOME}/Dev/work/'
+
 
 # =================================
 # Git Related Aliases
@@ -55,12 +56,6 @@ alias ll='exa -lahF --group-directories-first --color=auto --icons'
 
 
 # =================================
-# Alias for container manager
-# =================================
-# alias docker=podman
-# alias docker-compose=podman-compose
-
-# =================================
 # Docker aliases
 # =================================
 alias net8='docker run --rm -it -v "$PWD":/app -w /app mcr.microsoft.com/dotnet/sdk:8.0-alpine '
@@ -82,7 +77,6 @@ alias tree='f(){ docker run --rm -it -v "$PWD":/app johnfmorton/tree-cli tree "$
 # =================================
 # Alias for docker compose v2
 # =================================
-# alias docker-compose='docker compose'
 
 # Start the docker-compose stack in the current directory
 alias dcu="docker compose up -d"
