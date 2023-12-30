@@ -15,7 +15,7 @@ curl -L git.io/antigen > ~/antigen.zsh
 mkdir -p ${HOME}/Dev/examples ${HOME}/Dev/personal ${HOME}/Dev/projects
 
 # Fun hello
-figlet "... and we're back!" | lolcat
+figlet "¡Estamos de regreso!..." | lolcat
 
 # See our zsh changes
 sudo chsh -s $(which zsh)
