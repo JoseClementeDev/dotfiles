@@ -120,7 +120,3 @@ fi
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
-
-# fnm
-export PATH="$HOME/.local/share/fnm:$PATH"
-eval "`fnm env`"

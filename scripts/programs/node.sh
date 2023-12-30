@@ -9,5 +9,8 @@
 # Install Node with fnm
 # =======================
 curl -fsSL https://fnm.vercel.app/install | bash
-source ~/.bashrc
-fnm install 18
+
+export PATH="$HOME/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+fnm install v18
