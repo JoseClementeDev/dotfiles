@@ -16,6 +16,8 @@ function install {
 # Basics
 install wget
 install curl
+install zip
+install unzip
 install zsh
 install fzf
 install bat
