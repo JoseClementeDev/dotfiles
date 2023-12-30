@@ -14,12 +14,10 @@ curl -L git.io/antigen > ~/antigen.zsh
 # Create Dev folders
 mkdir -p ${HOME}/Dev/examples ${HOME}/Dev/personal ${HOME}/Dev/projects
 
+# Fun hello
+figlet "... and we're back!" | lolcat
+
 # See our zsh changes
 chsh -s $(which zsh)
 
 zsh
-
-source ~/.zshrc
-
-# Fun hello
-figlet "... and we're back!" | lolcat
