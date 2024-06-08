@@ -19,7 +19,7 @@ install curl
 install zip
 install unzip
 install zsh
-install fzf
+# install fzf
 install bat
 install eza
 install ripgrep

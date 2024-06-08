@@ -2,6 +2,7 @@
 
 cd ./dotfiles/scripts/programs/
 
+./fzf.sh
 ./dotnet.sh
 ./python.sh
 ./docker.sh
