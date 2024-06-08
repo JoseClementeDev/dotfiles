@@ -2,6 +2,7 @@
 
 cd ./dotfiles/scripts/programs/
 
+./eza.sh
 ./fzf.sh
 ./dotnet.sh
 ./python.sh
