@@ -21,7 +21,7 @@ install unzip
 install zsh
 install fzf
 install bat
-install exa
+install eza
 install ripgrep
 install openjdk-11-jdk
 
