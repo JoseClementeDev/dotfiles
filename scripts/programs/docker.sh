@@ -21,9 +21,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
+# Set iptables-legacy for docker
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+
 sudo service docker start
 sudo docker run hello-world
-
-# # Set iptables-legacy for docker
-# sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
-# sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
