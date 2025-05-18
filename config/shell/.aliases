@@ -1,22 +1,19 @@
 #-------------------------------------------------------------
 # Aliases for Installation
 #-------------------------------------------------------------
-alias install="sudo apt install"           #apt-get wrapper for better performance.
-alias upgrade='sudo apt upgrade'           #sudo apt-get upgrade
-alias update='sudo apt update'             #sudo apt-get update
+alias install="sudo apt install" #apt-get wrapper for better performance.
+alias upgrade='sudo apt upgrade' #sudo apt-get upgrade
+alias update='sudo apt update'   #sudo apt-get update
 alias remove="sudo apt remove"
 alias purge="sudo apt purge"
 alias autoremove="sudo apt autoremove"
 
-
 # =================================
 # Alias for folders
 # =================================
-alias dev='cd /${HOME}/Dev/'
-alias examples='cd /${HOME}/Dev/examples/'
-alias personal='cd /${HOME}/Dev/personal/'
-alias projects='cd /${HOME}/Dev/projects/'
-
+alias dev='cd /${HOME}/dev/'
+alias personal='cd /${HOME}/dev/personal/'
+alias work='cd /${HOME}/dev/work/'
 
 # =================================
 # Git Related Aliases
@@ -41,19 +38,16 @@ alias git.branches='git for-each-ref --sort=-committerdate refs/heads --format="
 # show a list of local and remote git branches sorted by the commit date
 alias git.branches.remote='git for-each-ref --sort=-committerdate refs/heads refs/remotes --format="%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)"'
 
-
 # =================================
 # Alias for bat
 # =================================
 alias cat=batcat --paging=never
 
-
 # =================================
-# Alias for exa
+# Alias for eza
 # =================================
-alias ls='exa -l --group-directories-first --color=auto --icons --no-permissions --no-user'
-alias ll='exa -lahF --group-directories-first --color=auto --icons'
-
+alias ls='eza -l --group-directories-first --color=auto --icons --no-permissions --no-user'
+alias ll='eza -lahF --group-directories-first --color=auto --icons'
 
 # =================================
 # Docker aliases
@@ -97,13 +91,11 @@ alias dcl="docker compose logs"
 # Quickly run the docker exec command like this: 'dex container-name bash'
 alias dex="docker exec -it"
 
-
 # =================================
 # General alias
 # =================================
 # Open current folder in Explorer (Windows WSL)
 alias open="explorer.exe $1"
-
 
 # export EDITOR="code"
 # export GIT_EDITOR="code"
@@ -112,7 +104,7 @@ alias open="explorer.exe $1"
 export FZF_CTRL_T_COMMAND='rg --files --no-ignore --hidden --follow --glob="!.git/*" --glob="!node_modules/*" --glob="!vendor/*" 2> /dev/null'
 export FZF_DEFAULT_OPTS='--preview "batcat --style=numbers --color=always --line-range :500 {}"'
 
-unalias z 2> /dev/null
+unalias z 2>/dev/null
 z() {
   [ $# -gt 0 ] && zshz "$*" && return
   cd "$(zshz -l 2>&1 | fzf-tmux +s --tac --query "$*" | sed 's/^[0-9,.]* *//')"

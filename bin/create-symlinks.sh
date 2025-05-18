@@ -1,36 +1,29 @@
 #!/bin/bash
 
-# Obtener el directorio de dotfiles
-dotfilesDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+# Importar utilidades
+source "$(dirname "$0")/logger.sh"
 
-function linkDotfile {
-  dest="${HOME}/${1}"
-  dateStr=$(date +%Y-%m-%d-%H%M)
+# Directorio base de los dotfiles
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-  if [ -h ~/${1} ]; then
-    # Enlace simbólico existente
-    echo "Eliminando enlace simbólico existente: ${dest}"
-    rm ${dest}
+# Crear enlaces simbólicos
+log "Creando enlaces simbólicos..."
 
-  elif [ -f "${dest}" ]; then
-    # Archivo existente
-    echo "Creando backup del archivo existente: ${dest}"
-    mv ${dest}{,.${dateStr}}
+# Configuración de shell
+ln -sf "${DOTFILES_DIR}/config/shell/.bashrc" "${HOME}/.bashrc"
+ln -sf "${DOTFILES_DIR}/config/shell/.zshrc" "${HOME}/.zshrc"
+ln -sf "${DOTFILES_DIR}/config/shell/.aliases" "${HOME}/.aliases"
 
-  elif [ -d "${dest}" ]; then
-    # Directorio existente
-    echo "Creando backup del directorio existente: ${dest}"
-    mv ${dest}{,.${dateStr}}
-  fi
+# Configuración de Git
+ln -sf "${DOTFILES_DIR}/config/git/.gitconfig" "${HOME}/.gitconfig"
 
-  echo "Creando nuevo enlace simbólico: ${dest}"
-  ln -s ${dotfilesDir}/config/${2}/${1} ${dest}
-}
+# Configuración de VSCode
+mkdir -p "${HOME}/.config/Code/User"
+ln -sf "${DOTFILES_DIR}/config/vscode/settings.json" "${HOME}/.config/Code/User/settings.json"
+ln -sf "${DOTFILES_DIR}/config/vscode/keybindings.json" "${HOME}/.config/Code/User/keybindings.json"
 
-# Configuraciones de shell
-linkDotfile .aliases "shell"
-linkDotfile .bashrc "shell"
-linkDotfile .zshrc "shell"
+# Configuración de Docker
+mkdir -p "${HOME}/.docker"
+ln -sf "${DOTFILES_DIR}/config/docker/config.json" "${HOME}/.docker/config.json"
 
-# Configuración de git
-linkDotfile .gitconfig "git"
+log "Enlaces simbólicos creados correctamente"
