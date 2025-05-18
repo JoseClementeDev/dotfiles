@@ -69,7 +69,7 @@ curl -L git.io/antigen >~/antigen.zsh || error "Error al instalar antigen"
 
 # Crear directorios de desarrollo
 log "Creando directorios de desarrollo..."
-mkdir -p ${HOME}/Dev/{examples,personal,projects}
+mkdir -p ${HOME}/dev/{personal,work}
 
 # Mensaje de finalización
 if command -v figlet &>/dev/null && command -v lolcat &>/dev/null; then
